@@ -82,6 +82,10 @@ void EMC1001::begin() {
     writeRegister(EMC1001_CONFIG, 0b000010); // Standby mode
 }
 
+void EMC1001::end() {
+    _dtwi->endMaster();
+}
+
 float EMC1001::getTemperature() {
     writeRegister(EMC1001_ONE_SHOT, 1);
     uint8_t status = readRegister(EMC1001_STATUS);

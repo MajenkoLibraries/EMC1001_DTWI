@@ -44,6 +44,7 @@ class EMC1001 {
         EMC1001(DTWI &d, uint8_t a) : _dtwi(&d), _address(a) {}
         
         void begin();
+        void end();
         float getTemperature();
 };
 
